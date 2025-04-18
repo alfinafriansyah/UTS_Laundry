@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('admin/', [WelcomeController::class,'index']);
+
+Route::group(['prefix' => 'admin/user'], function () {
+    Route::get('/', [UserController::class, 'index']);
+    Route::post('/list', [UserController::class, 'list']);
+    // Ajax Create
+    Route::get('/create', [UserController::class, 'create']);
+    Route::post('/ajax', [UserController::class, 'store']);
+    Route::get('/{id}', [UserController::class, 'show']);
+    // Ajax Update
+    Route::get('/{id}/edit', [UserController::class, 'edit']);
+    Route::put('/{id}/update', [UserController::class, 'update']);
+    // Ajax Delete
+    Route::get('/{id}/delete', [UserController::class, 'confirm']);
+    Route::delete('/{id}/delete', [UserController::class, 'delete']);
 });
