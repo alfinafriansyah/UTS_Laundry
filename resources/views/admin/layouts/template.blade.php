@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicons -->
-    <link href="{{ asset('niceadmin/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="{{ asset('niceadmin/img/apple-touch-icon.png')}}" rel="icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -69,8 +69,12 @@
     <script src="{{ asset('niceadmin/vendor/datatables/dataTables.bootstrap5.js')}}"></script>
     <script src="{{ asset('niceadmin/vendor/tinymce/tinymce.min.js')}}"></script>
     <script src="{{ asset('niceadmin/vendor/php-email-form/validate.js')}}"></script>
+    {{-- jQuery Validation --}}
+    <script src="{{ asset('niceadmin/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('niceadmin/vendor/jquery-validation/additional-methods.in.js') }}"></script>
     {{-- SweetAlert2 --}}
     <script src="{{ asset('niceadmin/vendor/sweetalert2/sweetalert2.min.js') }}"></script>
+    
 
 
     <!-- Template Main JS File -->

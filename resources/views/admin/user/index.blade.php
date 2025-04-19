@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="pagetitle">
-        <h1>Dashboard</h1>
+        <h1>{{ $page->title }}</h1>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -13,11 +13,11 @@
                 
                     <div class="card-body">
                 
-                        <h5 class="card-title">{{ $page->title }}</h5>
+                        <h5 class="card-title">{{ $page->card }}</h5>
                         
                         <div class="row">
                             <div class="col">
-                                <button onclick="modalAction('{{ url('user/create_ajax') }}')" class="btn btn-primary float-end mb-3">Tambah</button>
+                                <button onclick="modalAction('{{ url('admin/user/create') }}')" class="btn btn-primary float-end mb-3">Tambah</button>
                             </div>
                         </div>
 
@@ -71,13 +71,14 @@
 
 @push('js')
 <script>
+var dataUser;
 function modalAction(url = '') {
     $('#myModal').load(url, function() {
         $('#myModal').modal('show');
     });
 }
 $(document).ready(function() {
-    var dataUser = $('#table_user').DataTable({
+    dataUser = $('#table_user').DataTable({
         serverSide: true,
         ajax: {
             url: "{{ url('admin/user/list') }}",
