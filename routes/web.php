@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PelangganController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
@@ -33,4 +34,18 @@ Route::group(['prefix' => 'admin/user'], function () {
     // Ajax Delete
     Route::get('/{id}/delete', [UserController::class, 'confirm']);
     Route::delete('/{id}/delete', [UserController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'admin/pelanggan'], function () {
+    Route::get('/', [PelangganController::class, 'index']);
+    Route::post('/list', [PelangganController::class, 'list']);
+    // Ajax Create
+    Route::get('/create', [PelangganController::class, 'create']);
+    Route::post('/store', [PelangganController::class, 'store']);
+    // Ajax Update
+    Route::get('/{id}/edit', [PelangganController::class, 'edit']);
+    Route::put('/{id}/update', [PelangganController::class, 'update']);
+    // Ajax Delete
+    Route::get('/{id}/delete', [PelangganController::class, 'confirm']);
+    Route::delete('/{id}/delete', [PelangganController::class, 'delete']);
 });
