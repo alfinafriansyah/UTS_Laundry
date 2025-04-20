@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('id_trans')->constrained('transaksi', 'id_trans');
             $table->foreignId('id_paket')->constrained('paket', 'id_paket');
             $table->decimal('quantity', 8, 2);
+            $table->decimal('harga_satuan', 8, 2);
             $table->decimal('subtotal', 12, 2);
             $table->timestamps();
         });

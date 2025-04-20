@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaketController;
 use App\Http\Controllers\PelangganController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
@@ -48,4 +49,18 @@ Route::group(['prefix' => 'admin/pelanggan'], function () {
     // Ajax Delete
     Route::get('/{id}/delete', [PelangganController::class, 'confirm']);
     Route::delete('/{id}/delete', [PelangganController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'admin/paket'], function () {
+    Route::get('/', [PaketController::class, 'index']);
+    Route::post('/list', [PaketController::class, 'list']);
+    // Ajax Create
+    Route::get('/create', [PaketController::class, 'create']);
+    Route::post('/store', [PaketController::class, 'store']);
+    // Ajax Update
+    Route::get('/{id}/edit', [PaketController::class, 'edit']);
+    Route::put('/{id}/update', [PaketController::class, 'update']);
+    // Ajax Delete
+    Route::get('/{id}/delete', [PaketController::class, 'confirm']);
+    Route::delete('/{id}/delete', [PaketController::class, 'delete']);
 });
