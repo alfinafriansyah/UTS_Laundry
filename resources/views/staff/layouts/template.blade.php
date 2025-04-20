@@ -38,12 +38,12 @@
 </head>
 <body>
     <!-- ======= Header ======= -->
-    @include('admin.layouts.header')
+    @include('staff.layouts.header')
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
 
-        @include('admin.layouts.sidebar')
+        @include('staff.layouts.sidebar')
 
     </aside><!-- End Sidebar-->  
 
@@ -55,7 +55,7 @@
     </main><!-- End #main -->
     <!-- ======= Footer ======= -->
 
-    @include('admin.layouts.footer')
+    @include('staff.layouts.footer')
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('niceadmin/js/jquery.min.js')}}"></script>
@@ -84,20 +84,20 @@
         $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
         // Untuk menampilkan sweetalert pada saat ganti role
-        function confirmStaffAccess(event) {
+        function confirmAdminAccess(event) {
             event.preventDefault();
             
             Swal.fire({
-                title: 'Akses Menu Staff',
-                text: 'Anda akan masuk ke Halaman staff. Lanjutkan?',
+                title: 'Akses Menu Admin',
+                text: 'Anda akan masuk ke Halaman admin. Lanjutkan?',
                 icon: 'question',
                 showCancelButton: true,
                 confirmButtonText: 'Ya, Masuk',
                 cancelButtonText: 'Batal'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Redirect langsung ke route staff
-                    window.location.href = "{{ url('staff/') }}";
+                    // Redirect langsung ke route admin
+                    window.location.href = "{{ url('admin/') }}";
                 }
             });
         }

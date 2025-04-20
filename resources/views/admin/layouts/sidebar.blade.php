@@ -32,9 +32,9 @@
     </a>
     </li>
     <li class="nav-item">
-    <a onclick = "return confirm('Apakah Anda Yakin Ingin Logout?')" class="nav-link collapsed" href="logout.php">
+    <a onclick = "confirmStaffAccess(event)" class="nav-link collapsed" href="#">
         <i class="bi bi-power"></i>
-        <span>Logout</span>
+        <span>Ganti Role</span>
     </a>
     </li>
 

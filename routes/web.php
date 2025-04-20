@@ -5,6 +5,7 @@ use App\Http\Controllers\PelangganController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StaffWelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +65,5 @@ Route::group(['prefix' => 'admin/paket'], function () {
     Route::get('/{id}/delete', [PaketController::class, 'confirm']);
     Route::delete('/{id}/delete', [PaketController::class, 'delete']);
 });
+
+Route::get('staff/', [StaffWelcomeController::class,'index']);
