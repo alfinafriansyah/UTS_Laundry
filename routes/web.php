@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffWelcomeController;
+use App\Http\Controllers\StaffPelangganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,3 +68,17 @@ Route::group(['prefix' => 'admin/paket'], function () {
 });
 
 Route::get('staff/', [StaffWelcomeController::class,'index']);
+
+Route::group(['prefix' => 'staff/pelanggan'], function () {
+    Route::get('/', [StaffPelangganController::class, 'index']);
+    Route::post('/list', [StaffPelangganController::class, 'list']);
+    // Ajax Create
+    Route::get('/create', [StaffPelangganController::class, 'create']);
+    Route::post('/store', [StaffPelangganController::class, 'store']);
+    // Ajax Update
+    Route::get('/{id}/edit', [StaffPelangganController::class, 'edit']);
+    Route::put('/{id}/update', [StaffPelangganController::class, 'update']);
+    // Ajax Delete
+    Route::get('/{id}/delete', [StaffPelangganController::class, 'confirm']);
+    Route::delete('/{id}/delete', [StaffPelangganController::class, 'delete']);
+});
