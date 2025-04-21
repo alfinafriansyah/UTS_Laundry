@@ -10,7 +10,7 @@ class DetailTransaksiModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'detail_transaki';
+    protected $table = 'detail_transaksi';
     protected $primaryKey = 'id_detail';
     protected $fillable = ['id_trans', 'id_paket', 'quantity', 'harga_satuan', 'subtotal'];
 

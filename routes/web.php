@@ -7,6 +7,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffWelcomeController;
 use App\Http\Controllers\StaffPelangganController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,11 @@ Route::group(['prefix' => 'admin/paket'], function () {
     // Ajax Delete
     Route::get('/{id}/delete', [PaketController::class, 'confirm']);
     Route::delete('/{id}/delete', [PaketController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'admin/transaksi'], function () {
+    Route::get('/', [TransaksiController::class, 'index']);
+    Route::post('/store', [TransaksiController::class, 'store']);
 });
 
 Route::get('staff/', [StaffWelcomeController::class,'index']);
