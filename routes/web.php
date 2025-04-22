@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\StaffWelcomeController;
 use App\Http\Controllers\StaffPelangganController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\StaffTransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,4 +96,9 @@ Route::group(['prefix' => 'staff/pelanggan'], function () {
     // Ajax Delete
     Route::get('/{id}/delete', [StaffPelangganController::class, 'confirm']);
     Route::delete('/{id}/delete', [StaffPelangganController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'staff/transaksi'], function () {
+    Route::get('/', [StaffTransaksiController::class, 'index']);
+    Route::post('/store', [StaffTransaksiController::class, 'store']);
 });

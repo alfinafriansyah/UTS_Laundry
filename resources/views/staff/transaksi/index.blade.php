@@ -1,4 +1,4 @@
-@extends('admin.layouts.template')
+@extends('staff.layouts.template')
 
 @section('content')
     <div class="pagetitle">
@@ -14,7 +14,7 @@
                     <div class="card-body">
                 
                         <h5 class="card-title">{{ $page->card }}</h5>
-                        <form method="POST" action="{{ url('admin/transaksi/store') }}" id="form-transaksi">
+                        <form method="POST" action="{{ url('staff/transaksi/store') }}" id="form-transaksi">
                             @csrf
                             <div class="mb-3">
                                 <label>Kode Transaksi</label>
@@ -155,7 +155,7 @@
                     data: $(form).serialize(),
                     success: function(response) {
                         if (response.status) {
-                            window.location.href = "{{ url('admin/history') }}";
+                            window.location.href = "{{ url('staff/history') }}";
                             Swal.fire('Sukses', response.message, 'success');
                         }
                     },
