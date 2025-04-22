@@ -102,3 +102,10 @@ Route::group(['prefix' => 'staff/transaksi'], function () {
     Route::get('/', [StaffTransaksiController::class, 'index']);
     Route::post('/store', [StaffTransaksiController::class, 'store']);
 });
+
+Route::group(['prefix' => 'staff/history'], function () {
+    Route::get('/', [HistoryController::class, 'index']);
+    Route::post('/list', [HistoryController::class, 'list']);
+    Route::post('update-status', [HistoryController::class, 'updateStatus']);
+    Route::delete('delete/{id}', [HistoryController::class, 'destroy']);
+});
