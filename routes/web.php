@@ -3,6 +3,7 @@
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\StaffHistoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
@@ -104,8 +105,8 @@ Route::group(['prefix' => 'staff/transaksi'], function () {
 });
 
 Route::group(['prefix' => 'staff/history'], function () {
-    Route::get('/', [HistoryController::class, 'index']);
-    Route::post('/list', [HistoryController::class, 'list']);
-    Route::post('update-status', [HistoryController::class, 'updateStatus']);
-    Route::delete('delete/{id}', [HistoryController::class, 'destroy']);
+    Route::get('/', [StaffHistoryController::class, 'index']);
+    Route::post('/list', [StaffHistoryController::class, 'list']);
+    Route::post('update-status', [StaffHistoryController::class, 'updateStatus']);
+    Route::delete('delete/{id}', [StaffHistoryController::class, 'destroy']);
 });
