@@ -18,4 +18,9 @@ class DetailTransaksiModel extends Model
     {
         return $this->belongsTo(PaketModel::class, 'id_paket', 'id_paket');
     }
+
+    public function transaksi(): BelongsTo
+    {
+        return $this->belongsTo(TransaksiModel::class, 'id_trans', 'id_trans');
+    }
 }

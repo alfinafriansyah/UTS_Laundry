@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TransaksiModel extends Model
 {
@@ -17,5 +18,10 @@ class TransaksiModel extends Model
     public function pelanggan(): BelongsTo
     {
         return $this->belongsTo(PelangganModel::class, 'id_pelanggan', 'id_pelanggan');
+    }
+
+    public function detailTransaksi(): HasMany
+    {
+        return $this->hasMany(DetailTransaksiModel::class, 'id_trans', 'id_trans');
     }
 }

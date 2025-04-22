@@ -12,6 +12,11 @@
         <i class="bi bi-cash"></i>
         <span>Transaksi</span>
     </a>
+    <li class="nav-item">
+    <a class="nav-link {{ ($activeMenu != 'history') ? 'collapsed' : '' }}" href="{{ url('admin/history') }}">
+        <i class="bi bi-list-check"></i>
+        <span>History Transaksi</span>
+    </a>
     </li><!-- End Dashboard Nav -->
     <li class="nav-item">
     <a class="nav-link {{ ($activeMenu != 'user') ? 'collapsed' : '' }}" href="{{ url('admin/user') }}">
