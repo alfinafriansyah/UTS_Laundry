@@ -18,7 +18,6 @@ return new class extends Migration
             $table->dateTime('tanggal');
             $table->dateTime('batas_waktu');
             $table->enum('status', ['baru', 'diproses', 'selesai', 'diambil']);
-            $table->enum('pembayaran', ['belum', 'lunas']);
             $table->timestamps();
         });
     }

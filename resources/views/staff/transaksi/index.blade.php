@@ -64,7 +64,6 @@
                                 <label>Subtotal</label>
                                 <input readonly type="text" id="subtotal" name="subtotal" class="form-control subtotal" required>
                                 <input readonly type="hidden" id="status" name="status" class="form-control" value="baru" required>
-                                <input readonly type="hidden" id="pembayaran" name="pembayaran" class="form-control" value="belum" required>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary">Simpan</button>
@@ -126,9 +125,6 @@
                     required: true
                 },
                 status: {
-                    required: true
-                },
-                pembayaran: {
                     required: true
                 },
                 id_paket: {

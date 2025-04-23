@@ -53,7 +53,6 @@ class StaffTransaksiController extends Controller
                 'tanggal' => 'required|date',
                 'batas_waktu' => 'required|date|after_or_equal:tanggal',
                 'status' => 'required|in:baru,proses,selesai',
-                'pembayaran' => 'required|in:belum,lunas',
                 'id_paket' => 'required|exists:paket,id_paket',
                 'quantity' => 'required|numeric|min:1',
                 'harga_satuan' => 'required|numeric|min:1',
@@ -78,8 +77,7 @@ class StaffTransaksiController extends Controller
                     'id_pelanggan' => $request->id_pelanggan,
                     'tanggal' => $request->tanggal,
                     'batas_waktu' => $request->batas_waktu,
-                    'status' => $request->status,
-                    'pembayaran' => $request->pembayaran
+                    'status' => $request->status
                 ]);
 
                 // Simpan detail transaksi

@@ -21,7 +21,6 @@ class TransaksiSeeder extends Seeder
                 'tanggal' => Carbon::now()->subDays(2),
                 'batas_waktu' => Carbon::now()->addDays(1),
                 'status' => 'selesai',
-                'pembayaran' => 'lunas',
             ],
             [
                 'kode_trans' => 'TRX-' . (time() + 1),
@@ -29,7 +28,6 @@ class TransaksiSeeder extends Seeder
                 'tanggal' => Carbon::now()->subDay(),
                 'batas_waktu' => Carbon::now()->addDays(2),
                 'status' => 'diproses',
-                'pembayaran' => 'belum',
             ],
         ];
         
